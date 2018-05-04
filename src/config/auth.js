@@ -1,0 +1,1 @@
+export const getToken = () => JSON.parse(sessionStorage.getItem('token'))
