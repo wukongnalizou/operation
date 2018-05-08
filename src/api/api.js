@@ -24,3 +24,25 @@ export const Untie = params => { return axios.post('/crxl/qpp/comicCps/bindingCp
 export const addDistributor = params => { return axios.post('/crxl/qpp/comicCps/addDistributor', params).then(res => res.data); };
 
 export const updateDistributorstate = params => { return axios.post('/crxl/qpp/comicCps/updateDistributorState', params).then(res => res.data); };
+
+export const createCps = params => { return axios.post('/crxl/qpp/comicCps/createCpsAdmin', params).then(res => res.data); };
+
+export const getSex = params => { return axios.post('/crxl/qpp/comicCps/select/userEntitySex', params).then(res => res.data); };
+
+export const getfans = params => { return axios.post('/crxl/qpp/comicCps/select/userEntityDistribution', params).then(res => res.data); };
+
+export const getbean = params => { return axios.post('/crxl/qpp/comicCps/selectKakaOrderTotal', params).then(res => res.data); };
+
+export const getmoney = params => { return axios.post('/crxl/qpp/comicCps/select/cartoon/profit/new', params).then(res => res.data); };
+
+export const getline = params => { return axios.post('/crxl/qpp/comicCps/select/dataTrendMap', params).then(res => res.data); };
+
+export const getdata = params => { return axios.post('/crxl/qpp/comicCps/select/dataStatisticsE', params).then(res => res.data); };
+
+export const gethistorydata = params => { return axios.post('/crxl/qpp/comicCps/select/dataStatisticsEveryDay', params).then(res => res.data); };
+
+export const operatordata = params => { return axios.post('/crxl/qpp/comicCps/select/cpsDataStatistics', params).then(res => res.data); };
+
+export const alloperatordata = params => { return axios.post('/crxl/qpp/comicCps/select/cpsTotalDataStatistics', params).then(res => res.data); };
+
+export const makexcel = params => { return axios.get('/crxl/qpp/comicCps/exportExcel', { params: params }); };

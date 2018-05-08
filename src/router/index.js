@@ -17,6 +17,8 @@ const beanflow = r => require.ensure([], () => r(require('../views/beanflow.vue'
 const publicmoney = r => require.ensure([], () => r(require('../views/publicmoney.vue')), 'publicmoney')
 const fansex = r => require.ensure([], () => r(require('../views/fansex.vue')), 'fansex')
 const publicfans = r => require.ensure([], () => r(require('../views/publicfans.vue')), 'publicfans')
+const moneyline = r => require.ensure([], () => r(require('../views/moneyline.vue')), 'moneyline')
+const statistic = r => require.ensure([], () => r(require('../views/statistic.vue')), 'statistic')
 export default new Router({
   routes: [
     // {
@@ -125,10 +127,22 @@ export default new Router({
     },
     {
     	path:"/",
-    	name:"数据统计",
+    	name:"数据分析",
     	component:main,
         role:["caiwu"],
     	children:[
+            {
+                path:"/statistic",
+                name:"数据统计",
+                component:statistic,
+                role:["caiwu"],
+            },
+            {
+                path:"/moneyline",
+                name:"收入趋势",
+                component:moneyline,
+                role:["caiwu"],
+            },
     		{
     			path:"/beanflow",
     			name:"咔咔豆收益",
@@ -142,7 +156,7 @@ export default new Router({
                 role:["caiwu"],
     		},
     		{
-    			path:'publicfans',
+    			path:'/publicfans',
     			name:"公众号粉丝",
     			component:publicfans,
                 role:["caiwu"],
